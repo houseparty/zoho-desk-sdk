@@ -1,0 +1,30 @@
+{
+  "name": "zoho-desk-sdk",
+  "version": "0.1.0",
+  "description": "Nodejs SDK for interfacing with the zoho desk API",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "phin": "^3.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "mocha": "^6.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --fix",
+    "local-test": "node local-testing/local-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trifoia/zoho-desk-sdk.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Trifoia/zoho-desk-sdk/issues"
+  },
+  "homepage": "https://github.com/Trifoia/zoho-desk-sdk#readme"
+}
