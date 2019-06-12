@@ -1,2 +1,12 @@
 # Zoho creds
 .zoho-opts.json
+
+# Tests
+local-testing
+test
+
+# Extra Dev Flat Files
+.eslintrc.js
+
+# Vscode shenanigans
+.vscode

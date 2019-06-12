@@ -1,6 +1,9 @@
 # Zoho Desk SDK (Beta)
 Nodejs SDK for interfacing with the zoho desk API
 
+# Disclaimer
+This package is not developed or maintained by Zoho Corporation Pvt. Ltd. This is not an official SDK and full functionality is not guaranteed. Provided as-is
+
 # Authentication
 Zoho uses an Oauth authentication strategy that requires a few steps to complete. General guidance for working with authentication can be found [here](https://desk.zoho.com/DeskAPIDocument#Authentication#OauthTokens). The available documentation focuses on web-based authentication, but since this SDK is meant to be used "headless" some of the instructions are unclear.
 
