@@ -1,7 +1,8 @@
 {
   "name": "zoho-desk-sdk",
-  "version": "0.1.0",
-  "description": "Nodejs SDK for interfacing with the zoho desk API",
+  "version": "0.1.1",
+  "description": "Nodejs SDK for interfacing with the Zoho Desk API",
+  "author": "Trifoia <webapps@trifoia.com> (https://trifoia.com)",
   "main": "index.js",
   "dependencies": {
     "lodash": "^4.17.11",
@@ -21,7 +22,6 @@
     "type": "git",
     "url": "git+https://github.com/Trifoia/zoho-desk-sdk.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Trifoia/zoho-desk-sdk/issues"
