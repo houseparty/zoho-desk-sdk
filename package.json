@@ -1,6 +1,6 @@
 {
   "name": "zoho-desk-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Nodejs SDK for interfacing with the Zoho Desk API",
   "author": "Trifoia <webapps@trifoia.com> (https://trifoia.com)",
   "main": "index.js",
