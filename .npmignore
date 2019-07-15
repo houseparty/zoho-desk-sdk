@@ -4,6 +4,7 @@
 # Tests
 local-testing
 test
+testing.js
 
 # Extra Dev Flat Files
 .eslintrc.js

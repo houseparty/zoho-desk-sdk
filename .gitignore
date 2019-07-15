@@ -65,3 +65,6 @@ typings/
 
 # Zoho credentials
 .zoho-opts.json
+
+# Local testing
+testing.js
