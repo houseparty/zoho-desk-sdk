@@ -1,6 +1,6 @@
 {
   "name": "zoho-desk-sdk",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Nodejs SDK for interfacing with the Zoho Desk API",
   "author": "Trifoia <webapps@trifoia.com> (https://trifoia.com)",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.13.0",
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
