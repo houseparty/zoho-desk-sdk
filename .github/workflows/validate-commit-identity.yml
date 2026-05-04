@@ -1,0 +1,49 @@
+name: Validate commit identity
+
+on:
+  pull_request:
+  push:
+    branches: [main, master, dev, integration, hp-master, aws_version]
+
+jobs:
+  validate-commit-identity:
+    name: Validate commit identity
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate author emails
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            range="${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
+          else
+            if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+              range="${{ github.event.after }}"
+            else
+              range="${{ github.event.before }}..${{ github.event.after }}"
+            fi
+          fi
+
+          echo "Checking commit range: $range"
+          bad=$(git log --format='%h|%ae|%an' $range | awk -F'|' '$2 !~ /@(ripplestreet\.com|users\.noreply\.github\.com|lit\.team)$/ { print }' || true)
+
+          if [ -n "$bad" ]; then
+            echo "::error::Commits with disallowed author emails found:"
+            echo "$bad" | while IFS='|' read -r sha email name; do
+              echo "  $sha  $name <$email>"
+            done
+            echo ""
+            echo "Allowed email domains: @ripplestreet.com, @users.noreply.github.com, @lit.team"
+            echo "Fix your git config locally:"
+            echo "  git config --global user.email YOUR_EMAIL@ripplestreet.com"
+            echo "  git config --global user.name 'Your Name'"
+            echo "Then amend or rebase to correct existing commits before re-pushing."
+            exit 1
+          fi
+
+          echo "All commit author emails match allowed domains."
